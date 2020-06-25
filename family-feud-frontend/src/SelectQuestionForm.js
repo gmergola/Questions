@@ -8,38 +8,33 @@ function SelectQuestionForm() {
   const [questionIdx, setQuestionIdx] = useState(0);
   const history = useHistory();
 
-  /**handleChange: set storyIdx state to value from select*/
+  /**handleChange: set qurstionIdx state to value from select*/
   const handleChange = evt => {
     setQuestionIdx(evt.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
     history.push(`/question/${data.questions[questionIdx].question_main}`);
   }
 
-  function renderSelect() {
-    return (
-      loading ? <p>loading...</p> :
-        <div>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="questions">Choose a Question: </label>
-            <select name="questions" className="Question-select" onChange={handleChange}>
-              {data.questions.map((q, idx) => (
-                <option key={q.question_main} value={idx}>
-                  {q.question_main}
-                </option>
-              ))}
-            </select>
-            <div>
-              <button><b>Choose Question</b></button>
-            </div>
-          </form>
-        </div>
-    );
-  }
-
   return (
-    <div>{renderSelect()}</div>
+    loading ? <p>loading...</p> :
+      <div>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="questions">Choose a Question: </label>
+          <select name="questions" className="Question-select" onChange={handleChange}>
+            {data.questions.map((q, idx) => (
+              <option key={q.question_main} value={idx}>
+                {q.question_main}
+              </option>
+            ))}
+          </select>
+          <div>
+            <button><b>Choose Question</b></button>
+          </div>
+        </form>
+      </div>
   );
 }
 
