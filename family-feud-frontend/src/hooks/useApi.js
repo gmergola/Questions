@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 
 const useApi = (apiCall, arg = null) => {
-  const [Loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -12,15 +12,15 @@ const useApi = (apiCall, arg = null) => {
       const response = await apiCall(arg);
 
       if (mounted) {
-        setData(response.message);
+        setData(response);
         setLoading(false);
       }
     };
     makeCall();
     return () => (mounted = false);
-  }, [apiCallback, param]);
+  }, [apiCall, arg]);
 
-  return [Loading, data];
+  return [loading, data];
 };
 
 export default useApi;

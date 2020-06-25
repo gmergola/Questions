@@ -1,11 +1,12 @@
 import axios from "axios";
+import { BASE_URL } from './config.js';
 
 class FamilyFeudApi {
 
   /*getQuestions: gets all Questions*/
-  static async getQuestion() {
+  static async getQuestions() {
     try{
-      let response = await axios({url: '/questions', method: 'get'});
+      let response = await axios({url: `${BASE_URL}/questions`, method: 'get'});
       return response.data;
     }catch (err){
       let message = err.response.data.message;
@@ -16,7 +17,7 @@ class FamilyFeudApi {
   /*getQuestion: gets question by questionMain*/
   static async getQuestion(questionMain) {
     try{
-      let response = await axios({url: `/question/${questionMain}`, method: 'get'});
+      let response = await axios({url: `${BASE_URL}/question/${questionMain}`, method: 'get'});
       return response.data;
     }catch (err){
       let message = err.response.data.message;
@@ -24,3 +25,5 @@ class FamilyFeudApi {
     }
   }
 }
+
+export default FamilyFeudApi;

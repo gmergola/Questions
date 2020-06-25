@@ -12,11 +12,11 @@ class Question {
 
     let questions = result.rows;
 
-    let response = {};
-
-    for(let question of questions) {
-      response[question.question_main] = question.question;
-    }
+    let response = questions.map(question => (
+      {
+        question_main: question.question_main,
+        question: question.question
+      }));
 
     return {questions: response};
   }
