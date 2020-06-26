@@ -24,7 +24,7 @@ app.get("/questions", async function (req, res, next) {
 });
 
 /**get one question with all its answers and votes */
-app.get("/question/:question_main", async function (req, res, next) {
+app.get("/questions/:question_main", async function (req, res, next) {
   try {
     const result = await Question.get(req.params.question_main);
     return res.json(result);

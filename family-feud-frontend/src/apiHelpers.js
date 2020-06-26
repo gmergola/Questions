@@ -17,7 +17,7 @@ class FamilyFeudApi {
   /*getQuestion: gets question by questionMain*/
   static async getQuestion(questionMain) {
     try{
-      let response = await axios({url: `${BASE_URL}/question/${questionMain}`, method: 'get'});
+      let response = await axios({url: `${BASE_URL}/questions/${questionMain}`, method: 'get'});
       return response.data;
     }catch (err){
       let message = err.response.data.message;

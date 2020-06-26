@@ -15,7 +15,7 @@ function SelectQuestionForm() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    history.push(`/question/${data.questions[questionIdx].question_main}`);
+    history.push(`/questions/${data.questions[questionIdx].question_main}`);
   }
 
   return (

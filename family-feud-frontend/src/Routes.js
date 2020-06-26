@@ -11,7 +11,7 @@ function Routes() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/question/:question_main">
+        <Route exact path="/questions/:question_main">
           <Question />
         </Route>
         <Redirect to="/" />

@@ -1,7 +1,8 @@
 \c family-feud
 
-DROP TABLE IF EXISTS questions;
+DROP TABLE IF EXISTS answer_options;
 DROP TABLE IF EXISTS answers;
+DROP TABLE IF EXISTS questions;
 
 CREATE TABLE questions (
     question_main text NOT NULL PRIMARY KEY,
@@ -12,6 +13,11 @@ CREATE TABLE answers (
     answer text NOT NULL,
     question_main text NOT NULL REFERENCES questions ON DELETE CASCADE,
     vote integer NOT NULL
+);
+CREATE TABLE answer_options (
+    id integer NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    answer_option text NOT NULL,
+    answer_id integer NOT NULL REFERENCES answers ON DELETE CASCADE
 );
 
 
@@ -43,12 +49,12 @@ INSERT INTO answers (
            ('Potatoes','pantry', 21),
            ('Onions','pantry', 15),
            ('Flour','pantry', 10),
-           ('Tigars!','pantry', 1),
+           ('Tigers','pantry', 1),
            ('Pig','animal', 30),
            ('Cow','animal', 25),
            ('Chicken','animal', 23),
            ('Lamb','animal', 18),
-           ('Fish','animal', 10),
+           ('Rabbit','animal', 10),
            ('DRAGON','animal', 1),
            ('Traffic','late_work', 30),
            ('Hit snooze too many times','late_work', 25),
@@ -90,8 +96,8 @@ INSERT INTO answers (
            ('Leap Year','few_years', 21),
            ('Olympics','few_years', 15),
            ('FIFA World Cup','few_years', 7),
-           ('aliens!','few_years', 1),
-           ('Politics!','holidays', 30),
+           ('aliens','few_years', 1),
+           ('Politics','holidays', 30),
            ('Religion','holidays', 25),
            ('Your love life','holidays', 19),
            ('Finances','holidays', 14),
@@ -116,4 +122,49 @@ INSERT INTO answers (
            ('Take pictures','wedding', 10),
            ('run','wedding', 1);
 
+INSERT INTO answer_options (
+              answer_option,
+              answer_id
+            )
+
+    VALUES ('rooster', 9),
+           ('sheep', 10),
+           ('bunny', 11),
+           ('sleeping in', 14),
+           ('snooze', 14),
+           ('car', 15),
+           ('rain', 16),
+           ('snow', 16),
+           ('family', 17),
+           ('milk', 20),
+           ('ibuprofen', 25),
+           ('neosporin', 27),
+           ('antibacterial ointment', 27),
+           ('bandages', 28),
+           ('bandaid', 28),
+           ('trash', 30),
+           ('laundry', 31),
+           ('doing the dishes', 32),
+           ('dishwasher', 32),
+           ('bathroom', 33),
+           ('strawberries', 38),
+           ('blueberries', 38),
+           ('raspberries', 38),
+           ('blackberries', 38),
+           ('kale', 39),
+           ('spinnach', 39),
+           ('arugula', 39),
+           ('cell phone number', 42),
+           ('ssn', 43),
+           ('license number', 44),
+           ('debit card', 45),
+           ('credit card', 45),
+           ('routing number', 46),
+           ('election', 49),
+           ('love', 56),
+           ('love life', 56),
+           ('beeper', 67),
+           ('pager', 67),
+           ('pigeon', 70),
+           ('pictures', 76);
 
