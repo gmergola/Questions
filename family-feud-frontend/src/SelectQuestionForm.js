@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FamilyFeudApi from './apiHelpers';
 import useApi from './hooks/useApi';
 import { useHistory } from "react-router-dom";
+import './SelectQuestionForm.css';
 
 function SelectQuestionForm() {
   const [loading, data] = useApi(FamilyFeudApi.getQuestions);
@@ -20,9 +21,9 @@ function SelectQuestionForm() {
 
   return (
     loading ? <p>loading...</p> :
-      <div>
+      <div className="Form-container">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="questions">Choose a Question: </label>
+          <label className="choose-label" htmlFor="questions">Choose a Question: </label>
           <select name="questions" className="Question-select" onChange={handleChange}>
             {data.questions.map((q, idx) => (
               <option key={q.question_main} value={idx}>
@@ -31,7 +32,7 @@ function SelectQuestionForm() {
             ))}
           </select>
           <div>
-            <button><b>Choose Question</b></button>
+            <button className="choose-button"><b>Choose Question</b></button>
           </div>
         </form>
       </div>

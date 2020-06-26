@@ -1,0 +1,21 @@
+.Form-container {
+  margin-top: 30%;
+  margin-bottom: 50%;
+}
+
+.choose-button {
+  margin-top: 30px;
+  border-radius: 20px;
+  width: 200px;
+  height: 30px;
+}
+
+.choose-label {
+  font-size: 30px;
+}
+
+.Question-select {
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+}
