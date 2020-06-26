@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './GuessAnswerForm.css';
 
-/**ADD VOTE NUMBER AND A TOTAL SOMEWHERE
+/**ADD A TOTAL SOMEWHERE
  * ADD AN X WHEN ANSWER IS WRONG
  */
 
@@ -33,7 +34,7 @@ function GuessAnswerForm({ data }) {
   }
 
   return (
-    <div>
+    <div className="form-container">
       <h4>Submit your answers here:</h4>
       <form onSubmit={handleSubmit}>
         <input
