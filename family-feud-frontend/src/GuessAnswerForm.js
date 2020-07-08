@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './GuessAnswerForm.css';
+import TeamForm from './TeamForm';
 
 /**ADD A TOTAL SOMEWHERE
  * ADD AN X WHEN ANSWER IS WRONG
@@ -35,6 +36,7 @@ function GuessAnswerForm({ data }) {
 
   return (
     <div className="form-container">
+      <TeamForm />
       <h4>Submit your answers here:</h4>
       <form onSubmit={handleSubmit}>
         <input

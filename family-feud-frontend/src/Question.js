@@ -10,6 +10,7 @@ function Question() {
   const [loading, data] = useApi(FamilyFeudApi.getQuestion, question_main);
   const history = useHistory();
 
+  // console.log(data);
   function selectANewQuestion() {
     history.push('/');
   }

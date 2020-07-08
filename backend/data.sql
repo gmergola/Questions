@@ -127,16 +127,21 @@ INSERT INTO answer_options (
               answer_id
             )
 
-    VALUES ('rooster', 9),
+    VALUES ('onion', 4),
+           ('rooster', 9),
            ('sheep', 10),
            ('bunny', 11),
            ('sleeping in', 14),
            ('snooze', 14),
            ('car', 15),
+           ('car accident', 15),
            ('rain', 16),
            ('snow', 16),
            ('family', 17),
            ('milk', 20),
+           ('creamer', 20),
+           ('ice cube', 21),
+           ('ice cubes', 21),
            ('ibuprofen', 25),
            ('neosporin', 27),
            ('antibacterial ointment', 27),
