@@ -12,16 +12,6 @@ function GuessAnswerForm({ data }) {
   const [guessedAnswer, setGuessedAnswer] = useState('');
   const [shownAnswers, setShownAnswers] = useState([]);
 
-  function handleChange(evt) {
-    setGuessedAnswer(evt.target.value);
-  }
-
-  function handleSubmit(evt) {
-    evt.preventDefault();
-    showGuess();
-    setGuessedAnswer('');
-  }
-
   /**showGuess: logic for showing an answer compared to what the user guessed */
   function showGuess() {
     for (let answer of data.answers) {
@@ -34,9 +24,22 @@ function GuessAnswerForm({ data }) {
     }
   }
 
+  function handleChange(evt) {
+    setGuessedAnswer(evt.target.value);
+  }
+
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    showGuess();
+    setGuessedAnswer('');
+  }
+
+  console.log(data);
+
   return (
     <div className="form-container">
-      <TeamForm />
+      <TeamForm currentVote={shownAnswers[shownAnswers.length - 1]?.vote}/>
       <h4>Submit your answers here:</h4>
       <form onSubmit={handleSubmit}>
         <input
