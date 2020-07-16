@@ -14,17 +14,18 @@ function TeamForm({ currentVote }) {
     console.log(team);
   }
 
-  useEffect(
-    function changeTotals() {
-      if (currentVote !== undefined) {
-        if (team === 'team1') {
-          setTeam1Total((total) => total + currentVote);
-        }
-        if (team === 'team2') {
-          setTeam2Total((total) => total + currentVote);
-        }
+  function changeTotals() {
+    if (currentVote !== undefined) {
+      if (team === 'team1') {
+        setTeam1Total((total) => total + currentVote);
       }
-    }, [currentVote]);
+      if (team === 'team2') {
+        setTeam2Total((total) => total + currentVote);
+      }
+    }
+  }
+
+  useEffect(changeTotals, [currentVote]);
 
   return (
     <div>
