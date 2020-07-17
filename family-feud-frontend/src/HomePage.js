@@ -4,9 +4,9 @@ import './HomePage.css';
 
 function HomePage() {
   return (
-    <div>
-      <div className="HomePage-title">F a m i l y</div>
-      <div className="HomePage-title">F e u d</div>
+    <div className="HomePage-container">
+      <div className="HomePage-play">Let's play</div>
+      <div className="HomePage-title">Family Feud!</div>
       <SelectQuestionForm />
     </div>
   );

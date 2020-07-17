@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './TeamForm.css';
 
 function TeamForm({ currentVote }) {
   const [team, setTeam] = useState('team1');
@@ -28,9 +29,9 @@ function TeamForm({ currentVote }) {
   useEffect(changeTotals, [currentVote]);
 
   return (
-    <div>
+    <div className="TeamForm-container">
       <form onSubmit={handleSubmit}>
-        <div className="form-check">
+        <div className="form-check TeamForm-team1">
           <input
             onChange={handleChange}
             className="form-check-input"
@@ -39,9 +40,9 @@ function TeamForm({ currentVote }) {
             id="teamRadios1"
             value="team1"
             checked={team === "team1"}></input>
-          <label className="form-check-label" htmlFor="teamRadios1">Team 1</label>
+          <label htmlFor="teamRadios1"><b>Team 1</b></label>
         </div>
-        <div className="form-check">
+        <div className="form-check TeamForm-team2">
           <input
             onChange={handleChange}
             className="form-check-input"
@@ -50,12 +51,12 @@ function TeamForm({ currentVote }) {
             id="teamRadios2"
             value="team2"
             checked={team === "team2"}></input>
-          <label className="form-check-label" htmlFor="teamRadios2">Team 2</label>
+          <label htmlFor="teamRadios2"><b>Team 2</b></label>
         </div>
-        <button >Save</button>
+        <button className="TeamForm-save-button"><b>Save</b></button>
       </form>
-      <h5>Team 1 total: {team1Total}</h5>
-      <h5>Team 2 total: {team2Total}</h5>
+      <h5 className="TeamForm-team1-total">Team 1 total: {team1Total}</h5>
+      <h5 className="TeamForm-team2-total" >Team 2 total: {team2Total}</h5>
     </div>
   )
 }

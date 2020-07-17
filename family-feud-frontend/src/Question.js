@@ -4,13 +4,13 @@ import GuessAnswerForm from './GuessAnswerForm';
 import FamilyFeudApi from './apiHelpers';
 import useApi from './hooks/useApi';
 import { useHistory } from "react-router-dom";
+import './Question.css';
 
 function Question() {
   const { question_main } = useParams();
   const [loading, data] = useApi(FamilyFeudApi.getQuestion, question_main);
   const history = useHistory();
 
-  // console.log(data);
   function selectANewQuestion() {
     history.push('/');
   }
@@ -18,8 +18,8 @@ function Question() {
   return (
     loading ? <p>Loading...</p> :
     <div>
-      <h1>{data.question}</h1>
-      <button onClick={selectANewQuestion}>Select A New Question</button>
+      <button className="Question-new-button" onClick={selectANewQuestion}><b>Select A New Question</b></button>
+      <div className="Question-title">{data.question}</div>
       <GuessAnswerForm data={data}/>
     </div>
   );

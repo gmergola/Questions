@@ -1,4 +1,48 @@
-.form-container {
-  margin-top: 10%;
-  margin-bottom: 30%;
+.GuessAnswerForm-container {
+  margin-top: 40px;
+  margin-left:250px;
+}
+
+.GuessAnswerForm-label {
+  font-size: 25px;
+}
+
+.GuessAnswerForm-input {
+  margin-left: 50px;
+  margin-right: 7px;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+
+.GuessAnswerForm-button {
+  border-radius: 20px;
+  width: 150px;
+  height: 30px;
+  border: none;
+}
+
+.GuessAnswerForm-button:hover {
+  opacity: 0.5;
+}
+
+.GuessAnswerForm-answer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 900px){
+  .GuessAnswerForm-container {
+    margin-left: -120px;
+  }
+
+  .GuessAnswerForm-label {
+    font-size: 20px;
+    margin-left: 140px;
+  }
+
+  .GuessAnswerForm-input {
+    margin-left: 140px;
+  }
 }

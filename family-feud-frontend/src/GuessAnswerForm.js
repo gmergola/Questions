@@ -38,20 +38,21 @@ function GuessAnswerForm({ data }) {
   console.log(data);
 
   return (
-    <div className="form-container">
+    <div className="GuessAnswerForm-container">
       <TeamForm currentVote={shownAnswers[shownAnswers.length - 1]?.vote}/>
-      <h4>Submit your answers here:</h4>
+      <div className="GuessAnswerForm-label"><b>Submit your answers here:</b></div>
       <form onSubmit={handleSubmit}>
         <input
+          className="GuessAnswerForm-input"
           onChange={handleChange}
           name="answer-guess"
           value={guessedAnswer}></input>
-        <button>Submit Answer</button>
+        <button className="GuessAnswerForm-button"><b>Submit Answer</b></button>
       </form>
       <div>
         {shownAnswers.map(answer =>
-          <div key={answer.vote}>
-            {answer.answer} {answer.vote}
+          <div className="GuessAnswerForm-answer" key={answer.vote}>
+            <b>{answer.answer.toUpperCase()}</b> <i>number of votes &#8594; {answer.vote}</i>
           </div>)}
       </div>
     </div>
