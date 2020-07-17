@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './GuessAnswerForm.css';
 import TeamForm from './TeamForm';
 
-/**ADD A TOTAL SOMEWHERE
- * ADD AN X WHEN ANSWER IS WRONG
+/**
+ * TODO: ADD AN X WHEN ANSWER IS WRONG
  */
 
 
