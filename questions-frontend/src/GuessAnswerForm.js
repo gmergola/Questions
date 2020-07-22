@@ -39,7 +39,7 @@ function GuessAnswerForm({ data }) {
 
   return (
     <div className="GuessAnswerForm-container">
-      <TeamForm currentVote={shownAnswers[shownAnswers.length - 1]?.vote}/>
+      <TeamForm currentVote={shownAnswers[shownAnswers.length - 1]?.vote} />
       <div className="GuessAnswerForm-label"><b>Submit your answers here:</b></div>
       <form onSubmit={handleSubmit}>
         <input

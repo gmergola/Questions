@@ -30,19 +30,19 @@
 
 @media only screen and (max-width: 900px){
   .HomePage-title-container {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
   .HomePage-play {
-    margin-top: 25px;
-    margin-left: 50px;
+    margin-top: 40px;
+    margin-left: 80px;
     font-size: 20px;
   }
 
   .HomePage-title {
-    margin-top: 10px;
-    margin-left: 100px;
+    margin-top: 20px;
+    margin-left: 120px;
     font-size: 50px;
   }
 }
