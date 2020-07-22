@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import './Directions.css';
 
+/**Directions: a component with a route of /directions that explains to the user how to play the game */
 function Directions() {
   const history = useHistory();
   return (

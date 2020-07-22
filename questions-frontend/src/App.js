@@ -15,10 +15,3 @@ function App() {
 }
 
 export default App;
-
-/**
- * rendered in App --> SelectQuestionForm
- * rendered in SelectQuestionForm --> Question
- * rendered in Question --> GuessAnswerForm
- *
- */

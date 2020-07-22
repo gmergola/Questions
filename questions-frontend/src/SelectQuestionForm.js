@@ -4,12 +4,12 @@ import useApi from './hooks/useApi';
 import { useHistory } from "react-router-dom";
 import './SelectQuestionForm.css';
 
+/**SelectQuestionForm: a component to allow the user to select a question to answer */
 function SelectQuestionForm() {
   const [loading, data] = useApi(FamilyFeudApi.getQuestions);
   const [questionIdx, setQuestionIdx] = useState(0);
   const history = useHistory();
 
-  /**handleChange: set qurstionIdx state to value from select*/
   const handleChange = evt => {
     setQuestionIdx(evt.target.value);
   };

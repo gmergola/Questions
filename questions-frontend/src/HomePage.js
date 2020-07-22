@@ -4,9 +4,10 @@ import SelectQuestionForm from './SelectQuestionForm';
 import './HomePage.css';
 
 /**TODO:
- * add three X's and a time to change teams!
- * add testing
+ * ADD TESTING
  */
+
+/**HomePage: **landing page** Component rendering the SelectQuestionForm with a route of / */
 function HomePage() {
   const history = useHistory();
 

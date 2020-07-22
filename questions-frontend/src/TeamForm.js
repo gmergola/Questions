@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './TeamForm.css';
 
+/**TeamForm: a component that allows the user to determine which team is currently guessing an answer
+ * allocates points to the current team playing
+ */
 function TeamForm({ currentVote }) {
   const [team, setTeam] = useState('team1');
   const [team1Total, setTeam1Total] = useState(0);
@@ -15,6 +18,7 @@ function TeamForm({ currentVote }) {
     console.log(team);
   }
 
+  /**changeTotals: adds to the total of the current team playing when a correct answer is guessed */
   function changeTotals() {
     if (currentVote !== undefined) {
       if (team === 'team1') {
@@ -26,6 +30,7 @@ function TeamForm({ currentVote }) {
     }
   }
 
+  /**When currentVote state changes call changeTotals */
   useEffect(changeTotals, [currentVote]);
 
   return (

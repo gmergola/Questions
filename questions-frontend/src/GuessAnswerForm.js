@@ -35,6 +35,7 @@ function GuessAnswerForm({ data }) {
     setGuessedAnswer('');
   }
 
+  /**conosle.log here for testing */
   console.log(data);
 
   return (

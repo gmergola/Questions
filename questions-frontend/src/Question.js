@@ -6,6 +6,10 @@ import useApi from './hooks/useApi';
 import { useHistory } from "react-router-dom";
 import './Question.css';
 
+/**Question: a component with a route of /questions/:question_main
+ * renders the GuessAnswerForm
+ * Shows information for that specific question using the url parameter 'question_main'
+ */
 function Question() {
   const { question_main } = useParams();
   const [loading, data] = useApi(FamilyFeudApi.getQuestion, question_main);

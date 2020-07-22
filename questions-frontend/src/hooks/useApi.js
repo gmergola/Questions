@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-
+/**useApi: a hook to make api calls on the frontend */
 const useApi = (apiCall, arg = null) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
