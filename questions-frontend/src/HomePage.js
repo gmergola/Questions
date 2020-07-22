@@ -12,11 +12,15 @@ function HomePage() {
 
   return (
     <div className="HomePage-container">
+      <button
+        className="HomePage-directions-button"
+        onClick={() => history.push('/directions')}>
+        <b>How to play?</b>
+      </button>
       <div className="HomePage-title-container">
         <div className="HomePage-play">Let's play</div>
         <div className="HomePage-title">Questions!</div>
       </div>
-      <button onClick={() => history.push('/directions')}>How to play?</button>
       <SelectQuestionForm />
     </div>
   );

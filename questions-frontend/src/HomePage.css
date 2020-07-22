@@ -28,6 +28,21 @@
   background-color: rgb(253, 179, 42);
 }
 
+.HomePage-directions-button {
+  margin-top: 20px;
+  margin-left: 80%;
+  border-radius: 5px;
+  font-size: 12px;
+  width: 100px;
+  height: 20px;
+  background-color: rgb(252, 184, 59);
+  border: none;
+}
+
+.HomePage-directions-button:hover {
+  opacity: 0.5;
+}
+
 @media only screen and (max-width: 900px){
   .HomePage-title-container {
     margin-right: 10px;
