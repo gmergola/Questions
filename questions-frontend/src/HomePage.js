@@ -4,7 +4,7 @@ import SelectQuestionForm from './SelectQuestionForm';
 import './HomePage.css';
 
 /**TODO:
- * ADD TESTING
+ * Mock api calls in frontend testing
  */
 
 /**HomePage: **landing page** Component rendering the SelectQuestionForm with a route of / */
