@@ -2,18 +2,15 @@ import React, { useState } from 'react';
 import './GuessAnswerForm.css';
 import TeamForm from './TeamForm';
 
-/**
- * TODO: ADD AN X WHEN ANSWER IS WRONG
- */
-
 
 /**GuessAnswerForm: a form to guess an answer to the question */
 function GuessAnswerForm({ data }) {
   const [guessedAnswer, setGuessedAnswer] = useState('');
   const [shownAnswers, setShownAnswers] = useState([]);
+  const [incorrectXs, setIncorrectXs] = useState([]);
 
-  /**showGuess: logic for showing an answer compared to what the user guessed */
-  function showGuess() {
+  /**showCorrectGuess: logic for showing an answer compared to what the user guessed */
+  function showCorrectGuess() {
     for (let answer of data.answers) {
       if (answer.answer.toLowerCase() === guessedAnswer.toLowerCase() ||
         answer.options.includes(guessedAnswer.toLowerCase())) {
@@ -31,7 +28,13 @@ function GuessAnswerForm({ data }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    showGuess();
+    showCorrectGuess();
+    if(data.answers.every((answer) => answer.answer.toLowerCase() !== guessedAnswer.toLowerCase() &&
+    !answer.options.includes(guessedAnswer.toLowerCase()) && guessedAnswer !== '')) {
+      if(incorrectXs.length < 3) {
+        setIncorrectXs([...incorrectXs, 'X']);
+      }
+    }
     setGuessedAnswer('');
   }
 
@@ -40,7 +43,9 @@ function GuessAnswerForm({ data }) {
 
   return (
     <div className="GuessAnswerForm-container">
-      <TeamForm currentVote={shownAnswers[shownAnswers.length - 1]?.vote} />
+      <TeamForm setIncorrectXs={setIncorrectXs} currentVote={shownAnswers[shownAnswers.length - 1]?.vote} />
+      {incorrectXs.map((x, i) => <div className="GuessedAnswerForm-X" key={i}><b>{x}</b></div>)}
+      {incorrectXs.length === 3 ? <h1>Time to switch teams!</h1> : null}
       <div className="GuessAnswerForm-label"><b>Submit your answers here:</b></div>
       <form onSubmit={handleSubmit}>
         <input

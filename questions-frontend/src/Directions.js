@@ -13,20 +13,20 @@ function Directions() {
         <b>Back Home</b>
       </button>
       <div>
-        <h3>A Family Feud inspired game with some changes!</h3>
+        <h3>A Family Feud inspired game with a twist!</h3>
         <div className="Directions-bullet-point">
           <span className="dot"></span><span>Select a question</span>
         </div>
 
         <div className="Directions-bullet-point">
           <span className="dot"></span><span>
-            Once you've selected a question decide who is team1 and who is team 2.
+            Once you've selected a question decide who is on team1 and who is on team 2.
           </span>
         </div>
 
         <div className="Directions-bullet-point">
           <span className="dot"></span><span>
-            Once you've decided on the teams, have team1 and team 2 submit an answer.
+            Once you've decided on the teams, have team1 and team 2 each submit an answer.
             After that, the team with the highest voted answer starts!
           </span>
         </div>
@@ -41,7 +41,7 @@ function Directions() {
 
         <div className="Directions-bullet-point">
           <span className="dot"></span><span>
-            Every question has 6 answers, when all 6  correct answers have been guessed, the team with
+            Every question has 6 answers, when all 6 correct answers have been guessed, the team with
             the highest remaining points wins that round!
           </span>
         </div>

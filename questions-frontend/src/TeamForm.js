@@ -4,18 +4,18 @@ import './TeamForm.css';
 /**TeamForm: a component that allows the user to determine which team is currently guessing an answer
  * allocates points to the current team playing
  */
-function TeamForm({ currentVote }) {
+function TeamForm({ currentVote, setIncorrectXs }) {
   const [team, setTeam] = useState('team1');
   const [team1Total, setTeam1Total] = useState(0);
   const [team2Total, setTeam2Total] = useState(0);
 
   function handleChange(evt) {
     setTeam(evt.target.value);
+    setIncorrectXs([]);
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    console.log(team);
   }
 
   /**changeTotals: adds to the total of the current team playing when a correct answer is guessed */
@@ -62,6 +62,7 @@ function TeamForm({ currentVote }) {
       </form>
       <h5 className="TeamForm-team1-total">Team 1 total: {team1Total}</h5>
       <h5 className="TeamForm-team2-total" >Team 2 total: {team2Total}</h5>
+      <div className="TeamForm-team-div"><b>{`${team[0].toLocaleUpperCase()}${team.slice(1, team.length-1)} ${team[team.length-1]}`}</b></div>
     </div>
   )
 }

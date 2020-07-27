@@ -44,6 +44,12 @@
   opacity: 0.5;
 }
 
+.TeamForm-team-div {
+  margin-top: 60px;
+  margin-bottom: 2px;
+  font-size: 40px;
+}
+
 @media only screen and (max-width: 900px){
   .TeamForm-container {
     max-width: 300px;
@@ -51,5 +57,9 @@
 
   .TeamForm-save-button {
     margin-left: 6%;
+  }
+
+  .TeamForm-team-div {
+    font-size: 35px;
   }
 }

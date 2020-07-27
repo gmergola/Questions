@@ -1,10 +1,19 @@
 .GuessAnswerForm-container {
   margin-top: 40px;
   margin-left:250px;
+  margin-bottom: 80%;
+}
+
+.GuessedAnswerForm-X {
+  margin-left: 90px;
+  color: red;
+  font-size: 60px;
+  display: inline;
 }
 
 .GuessAnswerForm-label {
   font-size: 25px;
+  margin-bottom: 5px;
 }
 
 .GuessAnswerForm-input {
@@ -30,13 +39,21 @@
 .GuessAnswerForm-answer {
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 100px;
 }
 
 @media only screen and (max-width: 900px){
+
   .GuessAnswerForm-container {
     margin-left: -120px;
   }
 
+  .GuessedAnswerForm-X {
+    margin-left: 80px;
+    color: red;
+    font-size: 60px;
+    display: inline;
+  }
   .GuessAnswerForm-label {
     font-size: 20px;
     margin-left: 140px;
@@ -44,5 +61,11 @@
 
   .GuessAnswerForm-input {
     margin-left: 140px;
+  }
+
+  .GuessAnswerForm-answer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 200px;
   }
 }
