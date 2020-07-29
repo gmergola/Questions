@@ -1,5 +1,6 @@
 \c family-feud
 
+-- add more options to each answer and allow a space
 DROP TABLE IF EXISTS answer_options;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS questions;
