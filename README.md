@@ -23,4 +23,6 @@
 * Every question has 6 answers, when all 6 correct answers have been guessed, the team with
   the highest remaining points wins that round!
 
+  [Live App Demo](https://gracious-jang-a2386f.netlify.app/)
+
   Built completely by Genna Mergola
