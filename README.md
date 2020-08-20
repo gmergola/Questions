@@ -25,4 +25,7 @@
 
   [Live App Demo](https://gracious-jang-a2386f.netlify.app/)
 
+  ## Frontend Component Hierarchy
+![tables diagram](./documentation/questions.dot.png)
+
   Built completely by Genna Mergola

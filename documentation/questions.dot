@@ -1,0 +1,30 @@
+digraph schema {
+  graph [fontname=Arial rankdir=UD]
+  node [margin=0.08 fontname=Arial width=1.6 fontsize=10 shape=rect]
+  App [label=<<b>App</b>>]
+  Routes [label=<<b>Routes</b>>]
+  HomePage [label=<<b>HomePage</b> <br/><br/> <font color="purple"><i> / </i></font><br/><br/>>]
+  Directions [label=<<b>Directions</b> <br/><br/><font color="purple"><i>/directions </i></font><br/><br/>>]
+  Question [label=<<b>Question</b> <br/><br/><font color="purple"><i>/question/:question_main </i></font><br/><br/>>]
+  SelectQuestionForm [label=<<b>SelectQuestionForm</b>>]
+  GuessAnswerForm [label=<<b>GuessAnswerForm</b>>]
+  TeamForm [label=<<b>TeamForm</b>>]
+  LoadingSpinner [label=<<b>LoadingSpinner</b>> color=darkgreen]
+
+  App ->  Routes [color="gray"]
+  Routes -> HomePage [color="gray"]
+  Routes -> Question [color="gray"]
+  Routes -> Directions [color="gray"]
+  HomePage -> SelectQuestionForm [color="gray"]
+  Question -> GuessAnswerForm [color="gray"]
+  GuessAnswerForm -> TeamForm [color="gray"]
+  GuessAnswerForm -> LoadingSpinner [color="darkgreen"]
+  SelectQuestionForm -> LoadingSpinner [color="darkgreen"]
+
+
+subgraph cluster_misc {
+    graph [style=filled color=gray97 label=<<b> Directory </b>> fontsize=11]
+    node [margin=0.05 width=1.1 fontsize=9]
+    Component [label=<<b>Component</b><br/><sub><font color="purple"><i>route</i></font></sub><br/><br/>>]
+  }
+}
