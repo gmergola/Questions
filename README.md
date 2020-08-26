@@ -23,6 +23,10 @@
 * Every question has 6 answers, when all 6 correct answers have been guessed, the team with
   the highest remaining points wins that round!
 
+  ### Deployment
+  * Question's front end is deployed through Netlify
+  * Question's back end is deployed through Heroku
+
   [Live App Demo](https://gracious-jang-a2386f.netlify.app/)
 
   ## Frontend Component Hierarchy
